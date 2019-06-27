@@ -24,8 +24,9 @@ function submitData(userName, userEmail) {
 
 function addToDom(obj) {
     const userItem = document.createElement("li")
-    const itemText = document.createTextNode(`ID: ${obj.id}  Name: ${obj.name}  Email: ${obj.email}`)
+    //const itemText = document.createTextNode(
+    userItem.textContent = `ID: ${obj.id}  Name: ${obj.name}  Email: ${obj.email}`
     //userItem.innerText = 
-    userItem.appendChild(itemText)
+    //userItem.appendChild(itemText)
     userList.appendChild(userItem)
 }
