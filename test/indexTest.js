@@ -5,12 +5,13 @@ const nock = require( 'nock' );
 chai.use( spies );
 
 describe( "submitData()", () => {
-  let rando
+  let rando = Math.ceil( Math.random() * 1000 );
   let xhr, requests
   beforeEach( function () {
     window.fetch = require( 'node-fetch' );
 
-    rando = Math.ceil( Math.random() * 1000 )
+    // rando = Math.ceil( Math.random() * 1000 )
+    // rando = 500
 
 
 
@@ -69,7 +70,7 @@ describe( "submitData()", () => {
     await submitData( name, email )
 
     expect( document.body.innerHTML )
-      .to.include( rando )
+    .to.include(rando)
   } );
 
   it( "handles a failed POST request using catch, appends the error message to the DOM", async function () {
